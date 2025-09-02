@@ -16,7 +16,8 @@
     "build/three.module.js",
     "src",
     "examples/js",
-    "examples/fonts"
+    "examples/fonts",
+    "examples/textures"
   ],
   "directories": {
     "doc": "docs",
