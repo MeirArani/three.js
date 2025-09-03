@@ -16,6 +16,7 @@
     "examples/js",
     "examples/jsm",
     "examples/fonts",
+    "examples/textures",
     "LICENSE",
     "package.json",
     "README.md",
