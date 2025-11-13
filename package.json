@@ -1,5 +1,5 @@
 {
-  "name": "three",
+  "name": "@meir_arani/three",
   "version": "0.147.0",
   "description": "JavaScript 3D library",
   "type": "module",
