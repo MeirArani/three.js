@@ -6,7 +6,7 @@ import { UniformsGroup } from './UniformsGroup.js';
 
 function RawUniformsGroup( data ) {
 
-	new UniformsGroup.call( this );
+	UniformsGroup.call( this );
 
 	this.data = data;
 	this.autoUpdate = true;
