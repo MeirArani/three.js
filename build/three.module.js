@@ -47919,7 +47919,7 @@ class UniformsGroup extends EventDispatcher {
 
 function RawUniformsGroup( data ) {
 
-	UniformsGroup.call( this );
+	new UniformsGroup.call( this );
 
 	this.data = data;
 	this.autoUpdate = true;
