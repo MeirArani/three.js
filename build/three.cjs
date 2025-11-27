@@ -17393,6 +17393,14 @@ function WebGLUniformsGroups(gl, info, capabilities, state) {
 		const buffer = buffers[uniformsGroup.id];
 		const uniforms = uniformsGroup.uniforms;
 		const cache = uniformsGroup.__cache;
+		if (uniformsGroup.isRawUniformsGroup) {
+			if (uniformsGroup.autoUpdate || uniformsGroup.needsUpdate) {
+				gl.bindBuffer(35345, buffer);
+				gl.bufferSubData(35345, 0, uniformsGroup.data);
+				gl.bindBuffer(35345, null);
+			}
+			return;
+		}
 		gl.bindBuffer(gl.UNIFORM_BUFFER, buffer);
 		for (let i = 0, il = uniforms.length; i < il; i++) {
 			const uniform = uniforms[i];
