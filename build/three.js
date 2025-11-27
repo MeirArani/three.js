@@ -17373,7 +17373,7 @@
 			const bindingPointIndex = allocateBindingPointIndex();
 			uniformsGroup.__bindingPointIndex = bindingPointIndex;
 			const buffer = gl.createBuffer();
-			const size = uniformsGroup.__size;
+			const size = uniformsGroup.isRawUniformsGroup ? uniformsGroup.data.byteLength : uniformsGroup.__size;
 			const usage = uniformsGroup.usage;
 			gl.bindBuffer(gl.UNIFORM_BUFFER, buffer);
 			gl.bufferData(gl.UNIFORM_BUFFER, size, usage);
@@ -17473,6 +17473,9 @@
 			// determine total buffer size according to the STD140 layout
 			// Hint: STD140 is the only supported layout in WebGL 2
 
+			if (uniformsGroup.isRawUniformsGroup) {
+				return this;
+			}
 			const uniforms = uniformsGroup.uniforms;
 			let offset = 0; // global buffer offset in bytes
 			const chunkSize = 16; // size of a chunk in bytes
